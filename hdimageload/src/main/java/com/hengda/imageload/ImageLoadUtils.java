@@ -11,7 +11,7 @@ public class ImageLoadUtils {
 
     private static ImageLoader mImageLoader;
 
-    public static void setImageLoader(ImageLoader imageLoader) {
+    public static void initImageLoader(ImageLoader imageLoader) {
         mImageLoader = imageLoader;
     }
 
@@ -23,15 +23,15 @@ public class ImageLoadUtils {
         /**
          * 加载图片
          */
-        void loadImage(Context context, ImageView imageView, String url);
+        void loadImage(Context context, ImageView imageView, String url,int placeholderImg,int errorImg);
         /**
          * 方形的圆角图片
          */
-        void loadRoundImage(Context context, ImageView imageView, String url);
+        void loadRoundImage(Context context, ImageView imageView, String url,int placeholderImg,int errorImg);
         /**
          * 圆形图片
          */
-        void loadCircleImage(Context context, ImageView imageView, String url);
+        void loadCircleImage(Context context, ImageView imageView, String url,int placeholderImg,int errorImg);
 
         /**
          * 清除缓存

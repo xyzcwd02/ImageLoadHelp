@@ -1,4 +1,4 @@
-package com.hengda.imageloader;
+package com.hengda.picassoloader;
 
 import android.content.Context;
 import android.widget.ImageView;
@@ -12,20 +12,20 @@ import com.squareup.picasso.Picasso;
 
 public class PicassoImageLoader implements ImageLoadUtils.ImageLoader {
     @Override
-    public void loadImage(Context context, ImageView imageView, String url) {
+    public void loadImage(Context context, ImageView imageView, String url,int placeholderImg,int errorImg) {
         Picasso.with(context).load(url)//
-                .placeholder(R.mipmap.bg_default)//
-                .error(R.mipmap.bg_default)//
+                .placeholder(placeholderImg)//
+                .error(errorImg)//
                 .into(imageView);
     }
 
     @Override
-    public void loadRoundImage(Context context, ImageView imageView, String url) {
+    public void loadRoundImage(Context context, ImageView imageView, String url,int placeholderImg,int errorImg) {
 
     }
 
     @Override
-    public void loadCircleImage(Context context, ImageView imageView, String url) {
+    public void loadCircleImage(Context context, ImageView imageView, String url,int placeholderImg,int errorImg) {
 
     }
 

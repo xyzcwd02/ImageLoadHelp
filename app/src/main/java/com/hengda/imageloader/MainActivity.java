@@ -1,10 +1,9 @@
 package com.hengda.imageloader;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
-import com.bumptech.glide.Glide;
 import com.hengda.imageload.ImageLoadUtils;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,9 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         iv = (ImageView) findViewById(R.id.iv);
-        ImageLoadUtils.setImageLoader(new GlideImageLoader());//new GlideImageLoader可继承ImageLoader自定义  设置一次全局使用
-        ImageLoadUtils.getImageLoader().loadRoundImage(MainActivity.this,iv,url);
+        ImageLoadUtils.getImageLoader().loadImage(MainActivity.this,iv,url,R.mipmap.bg_default,R.mipmap.bg_default);
 //        ImageLoadUtils.getImageLoader().clearMemoryCache(MainActivity.this);
     }
-
 }

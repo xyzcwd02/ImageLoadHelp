@@ -1,1 +1,1 @@
-include ':app', ':hdimageload'
+include ':app', ':hdimageload', ':glideloader', ':picassoloader'

@@ -1,4 +1,4 @@
-package com.hengda.imageloader;
+package com.hengda.glideloader;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -8,6 +8,7 @@ import android.graphics.Paint;
 
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
+
 
 public class GlideCircleTransform extends BitmapTransformation {
 

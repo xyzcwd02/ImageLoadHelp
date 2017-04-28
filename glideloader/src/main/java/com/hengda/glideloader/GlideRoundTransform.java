@@ -1,4 +1,4 @@
-package com.hengda.imageloader;
+package com.hengda.glideloader;
 
 
 import android.content.Context;

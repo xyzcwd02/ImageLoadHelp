@@ -4,7 +4,9 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HD_Frame_ImageLoader.iml" filepath="$PROJECT_DIR$/HD_Frame_ImageLoader.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/glideloader/glideloader.iml" filepath="$PROJECT_DIR$/glideloader/glideloader.iml" />
       <module fileurl="file://$PROJECT_DIR$/hdimageload/hdimageload.iml" filepath="$PROJECT_DIR$/hdimageload/hdimageload.iml" />
+      <module fileurl="file://$PROJECT_DIR$/picassoloader/picassoloader.iml" filepath="$PROJECT_DIR$/picassoloader/picassoloader.iml" />
     </modules>
   </component>
 </project>

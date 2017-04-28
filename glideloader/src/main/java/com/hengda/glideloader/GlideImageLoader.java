@@ -1,4 +1,4 @@
-package com.hengda.imageloader;
+package com.hengda.glideloader;
 
 import android.content.Context;
 import android.os.Looper;
@@ -15,34 +15,35 @@ import com.hengda.imageload.ImageLoadUtils;
 
 public class GlideImageLoader implements ImageLoadUtils.ImageLoader {
     @Override
-    public void loadImage(Context context, ImageView imageView, String url) {
+    public void loadImage(Context context, ImageView imageView, String url,int placeholderImg,int errorImg) {
         Glide.with(context).load(url)//
                 .asBitmap()
-                .placeholder(R.mipmap.bg_default)//
-                .error(R.mipmap.bg_default)//
+                .placeholder(placeholderImg)//
+                .error(errorImg)//
                 .diskCacheStrategy(DiskCacheStrategy.ALL)//
                 .centerCrop()
                 .into(imageView);
     }
 
     @Override
-    public void loadRoundImage(Context context, ImageView imageView, String url) {
+    public void loadRoundImage(Context context, ImageView imageView, String url,int placeholderImg,int errorImg) {
         RequestManager glideRequest;
         glideRequest = Glide.with(context);
         glideRequest.load(url)
-                .placeholder(R.mipmap.bg_default)
-                .error(R.mipmap.bg_default)
-                .crossFade()
+                .asBitmap()
+                .placeholder(placeholderImg)
+                .error(errorImg)
+                .centerCrop()
                 .transform(new GlideRoundTransform(context)).into(imageView);
     }
 
     @Override
-    public void loadCircleImage(Context context, ImageView imageView, String url) {
+    public void loadCircleImage(Context context, ImageView imageView, String url,int placeholderImg,int errorImg) {
         RequestManager glideRequest;
         glideRequest = Glide.with(context);
         glideRequest.load(url)
-                .placeholder(R.mipmap.bg_default)
-                .error(R.mipmap.bg_default)
+                .placeholder(placeholderImg)
+                .error(errorImg)
                 .crossFade()
                 .transform(new GlideCircleTransform(context)).into(imageView);
     }
@@ -52,7 +53,6 @@ public class GlideImageLoader implements ImageLoadUtils.ImageLoader {
         clearImageDiskCache(context);
         clearImageMemoryCache(context);
     }
-
 
     /**
      * 清除图片磁盘缓存

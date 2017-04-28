@@ -5,6 +5,7 @@ import android.os.Looper;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.hengda.imageload.ImageLoadUtils;
 
@@ -22,6 +23,28 @@ public class GlideImageLoader implements ImageLoadUtils.ImageLoader {
                 .diskCacheStrategy(DiskCacheStrategy.ALL)//
                 .centerCrop()
                 .into(imageView);
+    }
+
+    @Override
+    public void loadRoundImage(Context context, ImageView imageView, String url) {
+        RequestManager glideRequest;
+        glideRequest = Glide.with(context);
+        glideRequest.load(url)
+                .placeholder(R.mipmap.bg_default)
+                .error(R.mipmap.bg_default)
+                .crossFade()
+                .transform(new GlideRoundTransform(context)).into(imageView);
+    }
+
+    @Override
+    public void loadCircleImage(Context context, ImageView imageView, String url) {
+        RequestManager glideRequest;
+        glideRequest = Glide.with(context);
+        glideRequest.load(url)
+                .placeholder(R.mipmap.bg_default)
+                .error(R.mipmap.bg_default)
+                .crossFade()
+                .transform(new GlideCircleTransform(context)).into(imageView);
     }
 
     @Override
@@ -64,7 +87,6 @@ public class GlideImageLoader implements ImageLoadUtils.ImageLoader {
             e.printStackTrace();
         }
     }
-
 
 
 }

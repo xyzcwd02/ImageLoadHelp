@@ -20,6 +20,16 @@ public class PicassoImageLoader implements ImageLoadUtils.ImageLoader {
     }
 
     @Override
+    public void loadRoundImage(Context context, ImageView imageView, String url) {
+
+    }
+
+    @Override
+    public void loadCircleImage(Context context, ImageView imageView, String url) {
+
+    }
+
+    @Override
     public void clearMemoryCache(Context context) {
     }
 }

@@ -21,14 +21,21 @@ public class ImageLoadUtils {
 
     public interface ImageLoader {
         /**
-         * 确定加载图片方式
+         * 加载图片
          */
         void loadImage(Context context, ImageView imageView, String url);
+        /**
+         * 方形的圆角图片
+         */
+        void loadRoundImage(Context context, ImageView imageView, String url);
+        /**
+         * 圆形图片
+         */
+        void loadCircleImage(Context context, ImageView imageView, String url);
 
         /**
          * 清除缓存
          */
         void clearMemoryCache(Context context);
-
     }
 }

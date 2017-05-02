@@ -15,5 +15,6 @@ public class APP extends Application{
     public void onCreate() {
         super.onCreate();
         ImageLoadUtils.initImageLoader(new GlideImageLoader());//new GlideImageLoader可继承ImageLoader自定义  设置一次全局使用
+//        ImageLoadUtils.initImageLoader(new PicassoImageLoader());
     }
 }

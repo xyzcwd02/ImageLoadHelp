@@ -3,7 +3,6 @@ package com.hengda.imageloader;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
-
 import com.hengda.imageload.ImageLoadUtils;
 
 public class MainActivity extends AppCompatActivity {

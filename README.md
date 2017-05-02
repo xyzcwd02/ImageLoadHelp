@@ -1,45 +1,30 @@
 ## 一、概述
-图片加载
+图片加载框架封装，为了方便以后因项目需要改动成其他框架。
 ## 二、使用
-继承ImageLoadUtils.ImageLoader子类实现方法确定如何加载图片，使用方式见demo
+### 1.引入
 ```
-  public interface ImageLoader {
-        /**
-         * 加载图片
-         */
-        void loadImage(Context context, ImageView imageView, String url);
-        /**
-         * 方形的圆角图片
-         */
-        void loadRoundImage(Context context, ImageView imageView, String url);
-        /**
-         * 圆形图片
-         */
-        void loadCircleImage(Context context, ImageView imageView, String url);
-
-        /**
-         * 清除缓存
-         */
-        void clearMemoryCache(Context context);
-    }
-
-  public class PicassoImageLoader implements ImageLoadUtils.ImageLoader {
-      @Override
-      public void loadImage(Context context, ImageView imageView, String url) {
-          Picasso.with(context).load(url)//
-                  .placeholder(R.mipmap.bg_default)//
-                  .error(R.mipmap.bg_default)//
-                  .into(imageView);
-      }
-
-      @Override
-      public void clearMemoryCache(Context context) {
-      }
-  }
-
-     ImageLoadUtils.setImageLoader(new GlideImageLoader());//new GlideImageLoader可继承ImageLoader自定义  设置一次全局使用
-
-     ImageLoadUtils.getImageLoader().loadImage(MainActivity.this,iv,url);
+dependencies {
+  //使用gilde
+compile 'com.hengda:wenda.glideloader:0.0.1'
+  //使用picasso
+compile 'com.hengda:wenda.picassoloader:0.0.1'
+  //其他
+compile 'com.hengda:hdimageload:0.0.1'
+}
 ```
+### 2.在Application中初始化
+```
+  //使用gilde
+  ImageLoadUtils.initImageLoader(new GlideImageLoader());//设置一次全局使用
+  //使用picasso
+  ImageLoadUtils.initImageLoader(new PicassoImageLoader());
+```
+### 3.使用
+```
+    ImageLoadUtils.getImageLoader().loadImage(MainActivity.this,iv,url,R.mipmap.bg_default,R.mipmap.bg_default);
+```
+## 三、说明
+1.目前只支持glide和picasso如果需要其他可以继承ImageLoadUtils.ImageLoader子类实现方法确定如何加载图片
+2.修改为其他图片加载框架只需修改初始化时代码其他不需要修改
 
 

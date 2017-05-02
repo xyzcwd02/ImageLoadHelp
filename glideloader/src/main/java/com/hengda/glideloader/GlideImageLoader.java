@@ -6,7 +6,6 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.hengda.imageload.ImageLoadUtils;
 
 /**
@@ -20,7 +19,6 @@ public class GlideImageLoader implements ImageLoadUtils.ImageLoader {
                 .asBitmap()
                 .placeholder(placeholderImg)//
                 .error(errorImg)//
-                .diskCacheStrategy(DiskCacheStrategy.ALL)//
                 .centerCrop()
                 .into(imageView);
     }

@@ -20,6 +20,17 @@ public class PicassoImageLoader implements ImageLoadUtils.ImageLoader {
     }
 
     @Override
+    public void loadImage(Context context, ImageView imageView, String url) {
+        Picasso.with(context).load(url)//
+                .into(imageView);
+    }
+
+    @Override
+    public void loadOriginalImage(Context context, ImageView imageView, String url) {
+
+    }
+
+    @Override
     public void loadRoundImage(Context context, ImageView imageView, String url,int placeholderImg,int errorImg) {
 
     }

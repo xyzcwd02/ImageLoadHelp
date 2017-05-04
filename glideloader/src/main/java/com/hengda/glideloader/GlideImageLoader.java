@@ -6,6 +6,9 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
+import com.bumptech.glide.load.resource.drawable.GlideDrawable;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.hengda.imageload.ImageLoadUtils;
 
 /**
@@ -21,6 +24,24 @@ public class GlideImageLoader implements ImageLoadUtils.ImageLoader {
                 .error(errorImg)//
                 .centerCrop()
                 .into(imageView);
+    }
+
+    @Override
+    public void loadImage(Context context, ImageView imageView, String url) {
+        Glide.with(context).load(url)//
+                .asBitmap()
+                .centerCrop()
+                .into(imageView);
+    }
+
+    @Override
+    public void loadOriginalImage(Context context, final ImageView imageView, String url) {
+        Glide.with(context).load(url).into(new SimpleTarget<GlideDrawable>() {
+            @Override
+            public void onResourceReady(GlideDrawable resource, GlideAnimation<? super GlideDrawable> glideAnimation) {
+                imageView.setImageDrawable(resource);
+            }
+        });
     }
 
     @Override

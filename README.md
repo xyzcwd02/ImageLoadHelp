@@ -5,11 +5,11 @@
 ```
 dependencies {
   //使用gilde
-compile 'com.hengda:wenda.glideloader:0.0.1'
+compile 'com.hengda:wenda.glideloader:0.0.2'
   //使用picasso
-compile 'com.hengda:wenda.picassoloader:0.0.1'
+compile 'com.hengda:wenda.picassoloader:0.0.2'
   //其他
-compile 'com.hengda:hdimageload:0.0.1'
+compile 'com.hengda:hdimageload:0.0.3'
 }
 ```
 ### 2.在Application中初始化
@@ -21,7 +21,18 @@ compile 'com.hengda:hdimageload:0.0.1'
 ```
 ### 3.使用
 ```
-    ImageLoadUtils.getImageLoader().loadImage(MainActivity.this,iv,url,R.mipmap.bg_default,R.mipmap.bg_default);
+   //正常使用
+   ImageLoadUtils.getImageLoader().loadImage(context,imageView,url,R.mipmap.bg_default,R.mipmap.bg_default);
+   //不需要占位图
+   ImageLoadUtils.getImageLoader().loadImage(context,imageView,url);
+   //加载原图片尺寸
+   ImageLoadUtils.getImageLoader().loadOriginalImage(context,imageView,url);
+   //清除缓存
+   ImageLoadUtils.getImageLoader().clearMemoryCache(context.this);
+   //加载方形的圆角图片
+   ImageLoadUtils.getImageLoader().loadRoundImage(context,imageView,url,R.mipmap.bg_default,R.mipmap.bg_default);
+   //加载圆形图片
+   ImageLoadUtils.getImageLoader().loadCircleImage(context,imageView,url,R.mipmap.bg_default,R.mipmap.bg_default);
 ```
 ## 三、说明
 ```

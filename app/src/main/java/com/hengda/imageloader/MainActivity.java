@@ -14,6 +14,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         iv = (ImageView) findViewById(R.id.iv);
         ImageLoadUtils.getImageLoader().loadImage(MainActivity.this,iv,url,R.mipmap.bg_default,R.mipmap.bg_default);
+//        ImageLoadUtils.getImageLoader().loadImage(MainActivity.this,iv,url);
 //        ImageLoadUtils.getImageLoader().clearMemoryCache(MainActivity.this);
+//        ImageLoadUtils.getImageLoader().loadOriginalImage(MainActivity.this,iv,url);
+//        ImageLoadUtils.getImageLoader().loadRoundImage(MainActivity.this,iv,url,R.mipmap.bg_default,R.mipmap.bg_default);
+//        ImageLoadUtils.getImageLoader().loadCircleImage(MainActivity.this,iv,url,R.mipmap.bg_default,R.mipmap.bg_default);
     }
 }

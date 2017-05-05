@@ -1,17 +1,17 @@
 apply plugin: 'com.android.library'
-//apply plugin: 'com.novoda.bintray-release'
-//
-//publish {
-//    userOrg = 'hdandroidteam' //你的用户名
-//    groupId = 'com.hengda' //你的唯一的groupId，对应com.squareup.okhttp3:okhttp:3.4.1中的com.squareup.okhttp3
-//    artifactId = 'wenda.picassoloader' //你的library的名字，对应com.squareup.okhttp3:okhttp:3.4.1中的okhttp
-//    publishVersion = '0.0.1' //版本号
-//    desc = 'des'
-//    website = 'https://github.com/xyzcwd02' //建议填写github地址，不过不影响，这里做演示填的自己的网址
-//
-//    bintrayUser = 'hdandroidteam' //你的用户名
-//    bintrayKey = '73d6b8e5010a405d8e5dabea6e235fe913177f89' //在你的账户里面查找
-//}
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'hdandroidteam' //你的用户名
+    groupId = 'com.hengda' //你的唯一的groupId，对应com.squareup.okhttp3:okhttp:3.4.1中的com.squareup.okhttp3
+    artifactId = 'wenda.picassoloader' //你的library的名字，对应com.squareup.okhttp3:okhttp:3.4.1中的okhttp
+    publishVersion = '0.0.2' //版本号
+    desc = 'des'
+    website = 'https://github.com/xyzcwd02' //建议填写github地址，不过不影响，这里做演示填的自己的网址
+
+    bintrayUser = 'hdandroidteam' //你的用户名
+    bintrayKey = '73d6b8e5010a405d8e5dabea6e235fe913177f89' //在你的账户里面查找
+}
 
 android {
     compileSdkVersion 25

@@ -32,6 +32,7 @@ public class GlideImageLoader implements ImageLoadUtils.ImageLoader {
                 .asBitmap()
                 .centerCrop()
                 .into(imageView);
+
     }
 
     @Override

@@ -35,6 +35,7 @@ public class GlideImageLoader implements ImageLoadUtils.ImageLoader {
 
     }
 
+
     @Override
     public void loadOriginalImage(Context context, final ImageView imageView, String url) {
         Glide.with(context).load(url).into(new SimpleTarget<GlideDrawable>() {
